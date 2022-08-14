@@ -8,6 +8,7 @@ namespace AutoStore\Providers\WordPress;
  */
 class WpActions
 {
+    const INIT = 'init';
     const ADMIN_NOTICES = 'admin_notices';
     const PLUGINS_LOADED = 'plugins_loaded';
 }
