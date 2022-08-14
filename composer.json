@@ -1,0 +1,12 @@
+{
+    "name": "juanmacivico87/auto-store",
+    "description": "Manage your store of vehicles",
+    "require": {
+        "php": ">=7.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AutoStore\\": "src/"
+        }
+    }
+}
