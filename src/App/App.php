@@ -1,6 +1,7 @@
 <?php
 namespace AutoStore\App;
 
+use AutoStore\Modules\PostTypes\Vehicle\VehiclePostType;
 use AutoStore\Providers\WordPress\WpActions;
 use AutoStore\Providers\WordPress\WpDependencies;
 use AutoStore\Providers\WordPress\WpProvider;
@@ -69,6 +70,7 @@ class App
      */
     public function load_classes(): void
     {
+        $vehicle = new VehiclePostType( $this->provider );
     }
 
     /**
