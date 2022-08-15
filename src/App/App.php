@@ -4,6 +4,7 @@ namespace AutoStore\App;
 use AutoStore\Modules\PostTypes\Vehicle\VehiclePostType;
 use AutoStore\Modules\Taxonomies\Bodywork\BodyworkTaxonomy;
 use AutoStore\Modules\Taxonomies\Brand\BrandTaxonomy;
+use AutoStore\Modules\Taxonomies\Fuel\FuelTaxonomy;
 use AutoStore\Providers\WordPress\WpActions;
 use AutoStore\Providers\WordPress\WpDependencies;
 use AutoStore\Providers\WordPress\WpProvider;
@@ -74,6 +75,7 @@ class App
     {
         $brand = new BrandTaxonomy( $this->provider );
         $bodywork = new BodyworkTaxonomy( $this->provider );
+        $fuel = new FuelTaxonomy( $this->provider );
         $vehicle = new VehiclePostType( $this->provider );
     }
 

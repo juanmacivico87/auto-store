@@ -1,8 +1,9 @@
 <?php
 namespace AutoStore\Modules\PostTypes\Vehicle;
 
-use AutoStore\Modules\Taxonomies\Brand\BodyworkTaxonomy;
+use AutoStore\Modules\Taxonomies\Bodywork\BodyworkTaxonomy;
 use AutoStore\Modules\Taxonomies\Brand\BrandTaxonomy;
+use AutoStore\Modules\Taxonomies\Fuel\FuelTaxonomy;
 use AutoStore\Providers\WordPress\Resources\PostType;
 use AutoStore\Providers\WordPress\WpProvider;
 
@@ -37,6 +38,7 @@ class VehiclePostType extends PostType
         $this->taxonomies = [
             BrandTaxonomy::TAXONOMY_NAME,
             BodyworkTaxonomy::TAXONOMY_NAME,
+            FuelTaxonomy::TAXONOMY_NAME,
         ];
 
         $args = [ 'slug' => $this->provider->translate( 'vehicle' ) ];
