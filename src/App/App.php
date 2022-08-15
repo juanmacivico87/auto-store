@@ -2,7 +2,7 @@
 namespace AutoStore\App;
 
 use AutoStore\Modules\PostTypes\Vehicle\VehiclePostType;
-use AutoStore\Modules\Taxonomies\Brand\BodyworkTaxonomy;
+use AutoStore\Modules\Taxonomies\Bodywork\BodyworkTaxonomy;
 use AutoStore\Modules\Taxonomies\Brand\BrandTaxonomy;
 use AutoStore\Providers\WordPress\WpActions;
 use AutoStore\Providers\WordPress\WpDependencies;

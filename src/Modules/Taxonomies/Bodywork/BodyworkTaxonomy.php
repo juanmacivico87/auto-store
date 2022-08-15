@@ -1,5 +1,5 @@
 <?php
-namespace AutoStore\Modules\Taxonomies\Brand;
+namespace AutoStore\Modules\Taxonomies\Bodywork;
 
 use AutoStore\Modules\PostTypes\Vehicle\VehiclePostType;
 use AutoStore\Providers\WordPress\Resources\Taxonomy;
