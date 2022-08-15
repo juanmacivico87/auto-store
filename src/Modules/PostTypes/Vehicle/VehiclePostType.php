@@ -4,6 +4,7 @@ namespace AutoStore\Modules\PostTypes\Vehicle;
 use AutoStore\Modules\Taxonomies\Bodywork\BodyworkTaxonomy;
 use AutoStore\Modules\Taxonomies\Brand\BrandTaxonomy;
 use AutoStore\Modules\Taxonomies\Color\ColorTaxonomy;
+use AutoStore\Modules\Taxonomies\EnvironmentalLabel\EnvironmentalLabelTaxonomy;
 use AutoStore\Modules\Taxonomies\Fuel\FuelTaxonomy;
 use AutoStore\Modules\Taxonomies\Gearbox\GearboxTaxonomy;
 use AutoStore\Providers\WordPress\Resources\PostType;
@@ -43,6 +44,7 @@ class VehiclePostType extends PostType
             FuelTaxonomy::TAXONOMY_NAME,
             ColorTaxonomy::TAXONOMY_NAME,
             GearboxTaxonomy::TAXONOMY_NAME,
+            EnvironmentalLabelTaxonomy::TAXONOMY_NAME,
         ];
 
         $args = [ 'slug' => $this->provider->translate( 'vehicle' ) ];

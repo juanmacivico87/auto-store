@@ -5,6 +5,7 @@ use AutoStore\Modules\PostTypes\Vehicle\VehiclePostType;
 use AutoStore\Modules\Taxonomies\Bodywork\BodyworkTaxonomy;
 use AutoStore\Modules\Taxonomies\Brand\BrandTaxonomy;
 use AutoStore\Modules\Taxonomies\Color\ColorTaxonomy;
+use AutoStore\Modules\Taxonomies\EnvironmentalLabel\EnvironmentalLabelTaxonomy;
 use AutoStore\Modules\Taxonomies\Fuel\FuelTaxonomy;
 use AutoStore\Modules\Taxonomies\Gearbox\GearboxTaxonomy;
 use AutoStore\Providers\WordPress\WpActions;
@@ -81,6 +82,7 @@ class App
         $color = new ColorTaxonomy( $this->provider );
         $gearbox = new GearboxTaxonomy( $this->provider );
         $vehicle = new VehiclePostType( $this->provider );
+        $environmental_label = new EnvironmentalLabelTaxonomy( $this->provider );
     }
 
     /**
