@@ -6,6 +6,7 @@ use AutoStore\Modules\Taxonomies\Bodywork\BodyworkTaxonomy;
 use AutoStore\Modules\Taxonomies\Brand\BrandTaxonomy;
 use AutoStore\Modules\Taxonomies\Color\ColorTaxonomy;
 use AutoStore\Modules\Taxonomies\Fuel\FuelTaxonomy;
+use AutoStore\Modules\Taxonomies\Gearbox\GearboxTaxonomy;
 use AutoStore\Providers\WordPress\WpActions;
 use AutoStore\Providers\WordPress\WpDependencies;
 use AutoStore\Providers\WordPress\WpProvider;
@@ -78,6 +79,7 @@ class App
         $bodywork = new BodyworkTaxonomy( $this->provider );
         $fuel = new FuelTaxonomy( $this->provider );
         $color = new ColorTaxonomy( $this->provider );
+        $gearbox = new GearboxTaxonomy( $this->provider );
         $vehicle = new VehiclePostType( $this->provider );
     }
 
