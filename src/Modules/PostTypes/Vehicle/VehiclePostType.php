@@ -22,7 +22,7 @@ class VehiclePostType extends PostType
     private WpProvider $provider;
 
     protected string $menu_icon = 'dashicons-car';
-    protected array $support = [ 'title', 'thumbnail', 'excerpt', 'page-attributes' ];
+    protected array $support = [ 'title', 'thumbnail', 'editor' ];
 
     /**
      * __construct()
@@ -38,6 +38,7 @@ class VehiclePostType extends PostType
         $this->provider = $provider;
         $this->singular = $this->provider->translate( 'Vehicle' );
         $this->plural = $this->provider->translate( 'Vehicles' );
+        $this->show_in_rest = false;
         $this->taxonomies = [
             BrandTaxonomy::TAXONOMY_NAME,
             BodyworkTaxonomy::TAXONOMY_NAME,
