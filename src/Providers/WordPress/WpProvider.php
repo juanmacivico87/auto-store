@@ -45,6 +45,19 @@ class WpProvider
     }
 
     /**
+     * add_meta_box()
+     *
+     * @param   array   $args
+     * @return 	void
+     * @access 	public
+     * @package	auto-store
+     */
+    public function add_meta_box( array $args ): void
+    {
+        add_meta_box( $args['id'], $args['title'], $args['callback'], $args['screen'], $args['context'], $args['priority'], null );
+    }
+
+    /**
      * load_plugin_textdomain()
      *
      * @return 	bool
@@ -96,6 +109,55 @@ class WpProvider
     }
 
     /**
+     * get_post_meta()
+     *
+     * @param   int     $id
+     * @param   string  $meta_key
+     * @return 	string|null
+     * @access 	public
+     * @package	auto-store
+     */
+    public function get_post_meta( int $post_id, string $meta_key = '' ): ?string
+    {
+        $post_meta = get_post_meta( $post_id, $meta_key, true );
+
+        if ( false === $post_meta ) {
+            return null;
+        }
+
+        return $post_meta;
+    }
+
+    /**
+     * update_post_meta()
+     *
+     * @param   int     $post_id
+     * @param   string  $meta_key
+     * @param   string  $meta_value
+     * @return 	void
+     * @access 	public
+     * @package	auto-store
+     */
+    public function update_post_meta( int $post_id, string $meta_key, string $meta_value ): void
+    {
+        update_post_meta( $post_id, $meta_key, $meta_value );
+    }
+
+    /**
+     * delete_post_meta()
+     *
+     * @param   int     $post_id
+     * @param   string  $meta_key
+     * @return 	bool
+     * @access 	public
+     * @package	auto-store
+     */
+    public function delete_post_meta( int $post_id, string $meta_key ): bool
+    {
+        return delete_post_meta( $post_id, $meta_key );
+    }
+
+    /**
      * is_multisite()
      *
      * @return 	bool
@@ -122,6 +184,21 @@ class WpProvider
     }
 
     /**
+     * register_taxonomy()
+     *
+     * @param   string  $taxonomy
+     * @param   array   $object_type
+     * @param   array   $args
+     * @return 	void
+     * @access 	public
+     * @package	auto-store
+     */
+    public function register_taxonomy( string $taxonomy, array $object_type, array $args ): void
+    {
+        register_taxonomy( $taxonomy, $object_type, $args );
+    }
+
+    /**
      * flush_rewrite_rules()
      *
      * @param   bool    $hard
@@ -132,5 +209,34 @@ class WpProvider
     public function flush_rewrite_rules( bool $hard = true ): void
     {
         flush_rewrite_rules( $hard );
+    }
+
+    /**
+     * esc_attr()
+     *
+     * @param   string  $text
+     * @return 	string
+     * @access 	public
+     * @package	auto-store
+     */
+    public function esc_attr( string $text ): string
+    {
+        return esc_attr( $text );
+    }
+
+    /**
+     * sanitize_meta()
+     *
+     * @param   string  $meta_key
+     * @param   string  $meta_value
+     * @param   string  $object_type
+     * @param   string  $object_subtype
+     * @return 	mixed
+     * @access 	public
+     * @package	auto-store
+     */
+    public function sanitize_meta( string $meta_key, string $meta_value, string $object_type, string $object_subtype = '' )
+    {
+        return sanitize_meta( $meta_key, $meta_value, $object_type, $object_subtype );
     }
 }
