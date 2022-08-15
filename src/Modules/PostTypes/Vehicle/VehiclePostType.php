@@ -1,6 +1,7 @@
 <?php
 namespace AutoStore\Modules\PostTypes\Vehicle;
 
+use AutoStore\Modules\Taxonomies\Brand\BrandTaxonomy;
 use AutoStore\Providers\WordPress\Resources\PostType;
 use AutoStore\Providers\WordPress\WpProvider;
 
@@ -32,6 +33,7 @@ class VehiclePostType extends PostType
         $this->provider = $provider;
         $this->singular = $this->provider->translate( 'Vehicle' );
         $this->plural = $this->provider->translate( 'Vehicles' );
+        $this->taxonomies = [ BrandTaxonomy::TAXONOMY_NAME ];
 
         $args = [ 'slug' => $this->provider->translate( 'vehicle' ) ];
 

@@ -2,6 +2,7 @@
 namespace AutoStore\App;
 
 use AutoStore\Modules\PostTypes\Vehicle\VehiclePostType;
+use AutoStore\Modules\Taxonomies\Brand\BrandTaxonomy;
 use AutoStore\Providers\WordPress\WpActions;
 use AutoStore\Providers\WordPress\WpDependencies;
 use AutoStore\Providers\WordPress\WpProvider;
@@ -70,6 +71,7 @@ class App
      */
     public function load_classes(): void
     {
+        $brand = new BrandTaxonomy( $this->provider );
         $vehicle = new VehiclePostType( $this->provider );
     }
 
